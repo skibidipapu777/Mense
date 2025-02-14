@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ns</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f980c0;
+        }
+        #titulo {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            width: 90%;
+
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .boton {
+            border: 0px;
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #si {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #9553e5;
+            color: white;
+        }
+        #no {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+            background-color: #f44336;
+            color: white;
+        }
+        #resultado {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        p{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            width: 90%;
+            color: white;
+        }
+        #textoResultado{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            width: 90%;
+
+            color: white;
+        }   
+
+
+        
+    </style>
+</head>
+<body>
+
+    <div id="titulo">kieres ser mi san valentin 🥺🥺🥺🥺?</div>
+    <button id="si" class="boton">Yep🥺</button>
+    <button id="no" class="boton">Nouu x peruANO🤮🤮🤮</button>
+
+    <div id="resultado">
+        <img id="imagen" src="https://i.pinimg.com/originals/a7/a1/cf/a7a1cfc55c9004ca3e0af7a45c895396.gif" alt="Imagen" style="max-width: 100%; height: auto;">
+        <div id="textoResultado"></div>
+        <p>
+
+            desde que te conocí hace ns 🥺 (kreo q cinco mese) en evei, me encantaba (me enkanta) hablar y jugar contigo y mas esas noches jugando hasta tarde en llamada y ns q mas,
+            significan mucho para mi, eres una persona muy linda y me encanta cmo me haces sentir <br>
+            
+            se que no todo es feliz y que algunas de mis acciones quiza te hicieron sentir mal y loxiento mucho y gracias por aun asi aguantarme🥺 <br>
+            
+            eres alguien muy especial para mi y quiero que sepas q tamo mucho, no solo pq me gusta mucho pasarla contigo sino por lo muy linda persona q eres
+            y espero siga siendo asi <br>
+            feliz dia y ns q mas 🥺🥺🥺🥺
+
+        </p>
+
+    </div>
+
+    <script>
+        let contador = 0;
+        const siButton = document.getElementById('si');
+        const noButton = document.getElementById('no');
+        const resultadoDiv = document.getElementById('resultado');
+        const textoResultado = document.getElementById('textoResultado');
+        const imagen = document.getElementById('imagen');
+        const titulo = document.getElementById('titulo');
+
+        noButton.addEventListener('click', () => {
+            contador++;
+            noButton.style.fontSize = `${16 - contador}px`; // Hacer más pequeño
+            siButton.style.fontSize = `${16 + contador * 15}px`; // Hacer más grande
+            siButton.innerText = getTextoSi(contador); // Cambiar texto
+        });
+
+        siButton.addEventListener('click', () => {
+            siButton.style.display = 'none';
+            noButton.style.display = 'none';
+            titulo.style.display = 'none'; // Ocultar el título
+            resultadoDiv.style.display = 'block';
+            // Cambia la imagen y el texto aquí
+            imagen.src = 'https://i.pinimg.com/originals/a7/a1/cf/a7a1cfc55c9004ca3e0af7a45c895396.gif'; // Cambia la ruta de la imagen
+            textoResultado.innerText = 'Yeiii🥺🥺🥺';
+        });
+
+        function getTextoSi(contador) {
+            const textos = ["Shii", "Pofiiii", "Si o te ns🥺", "si o Yoro", "T lo ruego😞"];
+            return textos[contador % textos.length]; // Ciclo a través de los textos
+        }
+    </script>
+
+</body>
+</html>
